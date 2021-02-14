@@ -6,11 +6,10 @@ import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const mappropsToProps = props => {
+const mapStateToProps = state => {
     return {
         campsites: state.campsites,
         comments: state.comments,
@@ -59,4 +58,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(connect(mapSTateToProps)(Main));
+export default withRouter(connect(mapStateToProps)(Main));
